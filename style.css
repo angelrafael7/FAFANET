@@ -1,0 +1,493 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(to right, #4a6ee0, #6a11cb);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Conteúdo */
+.content {
+    padding: 30px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4a6ee0;
+}
+
+/* Botões */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #4a6ee0, #6a11cb);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(106, 17, 203, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Tabelas */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table th {
+    background: #f8f9fa;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Status */
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-online {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-offline {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Utilidades */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* OTIMIZAÇÕES DE PERFORMANCE CSS */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+}
+
+body, html {
+    overflow: hidden; /* Previne scroll desnecessário */
+    will-change: transform;
+}
+
+/* Inputs otimizados */
+input, textarea, select, button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Remove animações pesadas em inputs */
+input:focus, textarea:focus, select:focus {
+    transition: border-color 0.15s ease-in-out;
+}
+
+/* Desabilita seleção de texto em elementos não necessários */
+.btn, .card, .header {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Hardware acceleration */
+.card, .btn, .input-group {
+    transform: translateZ(0);
+}
+
+/* HABILITA SCROLL EM TODO O APP */
+html, body {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+}
+
+/* Container principal - DEVE permitir scroll */
+.container {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+    min-height: 100vh !important;
+}
+
+/* Remove overflow hidden se existir */
+body > * {
+    overflow: visible !important;
+}
+
+/* Adicionar estas regras ao CSS existente */
+
+/* Melhorias para inputs com foco */
+.input-with-icon:focus {
+    border-color: #4a6ee0 !important;
+    box-shadow: 0 0 0 3px rgba(74, 110, 224, 0.1) !important;
+    outline: none !important;
+}
+
+/* Animação para alertas */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Estilo para botões hover */
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(74, 110, 224, 0.3) !important;
+}
+
+button[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(108, 117, 125, 0.3) !important;
+}
+
+/* Transição suave para todos os elementos interativos */
+button, input, .requirement-item {
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o modal mais elegante */
+#termsModal > div {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Ícones de validação mais visíveis */
+.requirement-valid {
+    color: #28a745 !important;
+    animation: fadeIn 0.5s ease;
+}
+
+.requirement-invalid {
+    color: #6c757d !important;
+}
+
+/* Barra de força da senha com transição */
+.strength-fill {
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+/* Placeholder mais suave */
+::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+}
+
+/* Scrollbar personalizada */
+.register-card-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.register-card-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.register-card-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.register-card-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Responsividade adicional */
+@media (max-width: 576px) {
+    .register-card-container {
+        padding: 20px !important;
+        border-radius: 15px !important;
+    }
+    
+    .register-header i {
+        font-size: 40px !important;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* Efeito de shake para erros */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+/* Estilos para o novo card de endereço físico */
+.physical-address-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    margin-top: 15px;
+    animation: slideInUp 0.3s ease;
+}
+
+.physical-address-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #60a5fa;
+    font-size: 16px;
+}
+
+.physical-address-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.address-line {
+    font-size: 14px;
+    color: #e2e8f0;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+/* Botão de scan de rede */
+.search-header .search-btn.network-scan {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.search-header .search-btn.network-scan:hover {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Animação para novos elementos */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade para novos elementos */
+@media (max-width: 768px) {
+    .physical-address-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-header {
+        flex-wrap: wrap;
+    }
+    
+    .search-header .search-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+.history-details {
+    margin-top: 8px;
+}
+
+.history-location {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+.history-info {
+    font-size: 12px;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-address {
+    font-size: 11px;
+    color: #60a5fa;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.history-item:hover .history-address {
+    color: #3b82f6;
+}
